@@ -1,69 +1,130 @@
+/* ===== RESET / BASE ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 body {
-  background-color: #ffe6f0; 
-  color: #333; 
-  font-family: Arial, Helvetica, sans-serif; 
-  margin: 0;
-  padding: 0;
+  background: #ffe6f0;           /* light pink */
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 }
 
+/* ===== TYPOGRAPHY ===== */
 h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #cc0066; 
-  text-align: center;
-  margin: 20px 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #cc0066;                
+  margin: 0;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
-
 h2 {
-  font-size: 1.8rem;
-  color: #99004d;
-  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: #99004d;               
+  margin: 0 0 10px;
   border-bottom: 2px solid #cc0066;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
 }
+h3.role { margin: 0; font-size: 1.15rem; color: #660033; }
+p { margin: 0.35rem 0; }
 
-#About {
+/* ===== LINKS ===== */
+a { color: #0b63b6; }
+a:hover, a:focus { color: #053e73; }
+
+#About, #Experience, #Skills, #Projects, #Connect {
   padding: 20px;
   margin: 20px;
-  background-color: #fff0f5; 
-  border-radius: 8px;
+  background-color: #fff0f5;    
+  border-radius: 10px;
+  border: 1px solid #f3c2d9;
+  box-shadow: 0 2px 8px rgba(204, 0, 102, 0.06);
 }
 
-#Experience {
-  padding: 20px;
-  margin: 20px;
+#About, #Experience, #Skills, #Projects, #Connect { scroll-margin-top: 84px; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+}
+.skip-link:focus {
+  left: 12px; top: 8px;
+  background: #ffffff; color: #000;
+  padding: 8px 12px; border-radius: 6px;
+  border: 1px solid #999;
 }
 
-#Experience ul {
-  list-style-type: none; 
-  padding: 0;
+/* ===== NAVBAR ===== */
+.site-nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: #ffffff;
+  border-bottom: 2px solid #f3c2d9;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 12px 20px;
 }
-
-#Experience li {
-  background-color: #fff0f5; 
-  /* margin: 10px 0; */
-  padding: 10px;
-  border-radius: 6px;
-  font-weight: 500;
-}
-
-#Connect {
-  text-align: center;
-  padding: 20px;
-  margin: 20px;
-}
-
-a {
+.site-nav .logo a {
   text-decoration: none;
   color: #cc0066;
-  font-weight: bold;
-  padding: 8px 12px;
- 
+  letter-spacing: 1px;
+}
+.nav-links {
+  list-style: none; display: flex; gap: 16px; margin: 0; padding: 0;
+}
+.nav-links a {
+  display: inline-block;
+  text-decoration: none;
+  color: #99004d;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background .18s ease, transform .06s ease;
+}
+.nav-links a:hover, .nav-links a:focus {
+  background: #ffe6f0;
+  transform: translateY(-1px);
 }
 
-a:hover {
-  background-color: #cc0066;
-  color: white;
+/* ===== EXPERIENCE (Flex rows + columns) ===== */
+.experience-item {
+  background: #fff;
+  border: 1px solid #f3c2d9;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+.experience-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+}
+.role-company { display: flex; flex-direction: column; gap: 2px; min-width: 220px; }
+.company { color: #99004d; opacity: .95; margin: 0; }
+.dates { color: #555; white-space: nowrap; margin: 0; }
+.description { margin-top: 10px; }
+
+/* ===== PROJECTS ===== */
+#Projects ul {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: 1fr; gap: 12px;
+}
+#Projects li {
+  background: #fff; border: 1px solid #f3c2d9; border-radius: 10px; padding: 12px;
+}
+
+.social-links {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+}
+.social-links a {
+  text-decoration: none; font-weight: 600;
+  padding: 10px 14px; border-radius: 999px;
+  border: 1px solid #f3c2d9; background: #ffffff; color: #99004d;
+  transition: background .18s ease, box-shadow .18s ease;
+}
+.social-links a:hover, .social-links a:focus {
+  background: #ffe6f0;
+  box-shadow: 0 2px 6px rgba(153, 0, 77, 0.15);
+}
+
+@media (max-width: 720px) {
+  h1 { font-size: 1.6rem; }
+  .site-nav { flex-wrap: wrap; gap: 10px; }
+  .experience-row { flex-direction: column; align-items: flex-start; }
+  .dates { white-space: normal; }
+  #Projects ul { grid-template-columns: 1fr; }
 }
