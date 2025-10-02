@@ -24,32 +24,32 @@ h2 {
   padding-bottom: 5px;
 }
 
-.About {
+#About {
   padding: 20px;
   margin: 20px;
   background-color: #fff0f5; 
   border-radius: 8px;
 }
 
-.Experience {
+#Experience {
   padding: 20px;
   margin: 20px;
 }
 
-.Experience ul {
+#Experience ul {
   list-style-type: none; 
   padding: 0;
 }
 
-.Experience li {
-  background-color: #ffccdd; 
-  margin: 10px 0;
+#Experience li {
+  background-color: #fff0f5; 
+  /* margin: 10px 0; */
   padding: 10px;
   border-radius: 6px;
   font-weight: 500;
 }
 
-.Connect {
+#Connect {
   text-align: center;
   padding: 20px;
   margin: 20px;
