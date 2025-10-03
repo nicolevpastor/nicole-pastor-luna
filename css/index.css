@@ -211,7 +211,7 @@ p { margin: 0 0 .5rem 0; color: var(--text); }
 
 @media (min-width: 768px) {
 
-  /* HEADERS (element 1: size + gradient) */
+  /* HEADERS  */
   h2 {
     font-size: clamp(1.4rem, 3vw, 1.8rem);
     background: linear-gradient(90deg, var(--accent), var(--accent-2));
@@ -220,32 +220,73 @@ p { margin: 0 0 .5rem 0; color: var(--text); }
   }
   h3 { font-size: clamp(1.15rem, 2.6vw, 1.35rem); }
 
-  /* NAV (element 2: layout + gap) */
+  /* NAV  */
   .nav-links {
     justify-content: center;
     gap: .6rem;
   }
 
-  /* SECTION (element 3: padding + background) */
+  /* SECTION  */
   section {
     padding: 1.35rem 1.35rem 1.6rem;
     background: linear-gradient(180deg, color-mix(in oklab, var(--card) 88%, transparent), var(--card));
   }
 
-  /* EXPERIENCE (element 4: grid + padding) */
+  /* EXPERIENCE */
   .experience-row {
     grid-template-columns: 1fr auto;
     gap: .6rem 1rem;
   }
   .experience-item { padding: 1.05rem; }
 
-  /* PROJECT LIST (element 5: spacing + font) */
+  /* PROJECT LIST  */
   #project-list { gap: .9rem; }
   #project-list li { font-size: 1rem; padding: .85rem 1.05rem; }
 
-  /* SOCIAL LINKS (element 6: size + shadow) */
+  /* SOCIAL LINKS */
   .social-links a {
     padding: .65rem 1rem;
     box-shadow: 0 10px 22px color-mix(in oklab, var(--accent) 45%, transparent);
   }
+
+  /* ===== Skills list layout ===== */
+.skills-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.skills-list li{
+  padding: .5rem .75rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 20%, transparent);
+  border-radius: .75rem;
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  font-weight: 600;
+}
+
+/* Tablet */
+@media (min-width: 768px){
+  .skills-list{ gap: .75rem; }
+  .skills-list li{
+    padding: .6rem .9rem;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px){
+  .skills-list{ gap: .9rem; }
+  .skills-list li{ padding: .7rem 1rem; }
+}
+
+/* Simple footer styling */
+footer{
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+}
 }
