@@ -289,4 +289,68 @@ footer{
   text-align: center;
   color: var(--muted);
 }
+
+#LeaveMessage form {
+  display: grid;
+  gap: .6rem;
+  max-width: 640px;
+}
+
+#LeaveMessage label { font-weight: 600; color: var(--muted); }
+
+#LeaveMessage input,
+#LeaveMessage textarea {
+  width: 100%;
+  padding: .6rem .75rem;
+  border-radius: .6rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 22%, transparent);
+  background: color-mix(in oklab, var(--card) 95%, transparent);
+}
+
+#LeaveMessage textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#LeaveMessage button[type="submit"] {
+  padding: .6rem 1rem;
+  border-radius: .75rem;
+  border: 1px solid var(--accent);
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: #06202a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#messages ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .6rem;
+}
+
+#messages li {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  justify-content: space-between;
+  padding: .6rem .8rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 16%, transparent);
+  border-radius: .75rem;
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+}
+
+#messages li a { font-weight: 700; color: #3b0e24; text-decoration: none; }
+#messages li span { opacity: .9; }
+
+#messages li button {
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+  border-radius: .6rem;
+  padding: .35rem .6rem;
+  background: linear-gradient(180deg, var(--card), color-mix(in oklab, var(--card) 85%, transparent));
+  cursor: pointer;
+}
+
+
 }

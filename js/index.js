@@ -18,6 +18,8 @@ copyright.innerHTML = `&copy; ${thisYear} Nicole Pastor`; // change name if you 
 footer.appendChild(copyright);
 
 const skills = ["JavaScript", "HTML", "CSS", "React", "Supabase", "Git", "Figma"];
+const messageForm = document.forms['leave_message']; // select by form name
+
 
 // Your HTML already has <section id="Skills"> (capital S)
 const skillsSection = document.querySelector('#Skills');
@@ -39,4 +41,63 @@ if (skillsSection) {
     li.textContent = s;
     skillsList.appendChild(li);
   }
+
+
+  if (messageForm) {
+  messageForm.addEventListener('submit', (event) => {
+   
+    event.preventDefault();
+
+    // grab values
+    const usersName = event.target.usersName.value.trim();
+    const usersEmail = event.target.usersEmail.value.trim();
+    const usersMessage = event.target.usersMessage.value.trim();
+
+    console.log({ usersName, usersEmail, usersMessage });
+
+   
+    const messageSection = document.querySelector('#messages');
+    if (messageSection) {
+      // find the <ul> inside #messages
+      let messageList = messageSection.querySelector('ul');
+      if (!messageList) {
+        messageList = document.createElement('ul');
+        messageSection.appendChild(messageList);
+      }
+
+      const newMessage = document.createElement('li');
+
+    
+      newMessage.innerHTML = `
+        <a href="mailto:${usersEmail}">${usersName}</a>:
+        <span>${usersMessage}</span>
+      `;
+
+      // "remove" button
+      const removeButton = document.createElement('button');
+      removeButton.type = 'button';
+      removeButton.textContent = 'remove';
+
+      // when clicked it will remove this list item
+      removeButton.addEventListener('click', () => {
+        const entry = removeButton.parentNode; // parent <li>
+        entry.remove();
+      });
+
+      // attach button to the <li> and the <li> to the list
+      newMessage.appendChild(removeButton);
+      messageList.appendChild(newMessage);
+    }
+
+   
+    messageForm.reset();
+  });     
+
+
+
+  }
+
+
+
+
 }
